@@ -31,8 +31,35 @@ zstyle ':prezto:load' pmodule \
   'directory' \
   'spectrum' \
   'utility' \
+  'ssh' \
   'completion' \
+  'homebrew' \
+  'osx' \
+  'git' \
+  'history-substring-search' \
   'prompt'
+
+# causes exit
+#   'syntax-highlighting' \
+
+#zstyle ':prezto:load' pmodule \
+#  'environment' \
+#  'terminal' \
+#  'editor' \
+#  'history' \
+#  'directory' \
+#  'spectrum' \
+#  'utility' \
+#  'ssh' \
+#  'completion' \
+#  'homebrew' \
+#  'osx' \
+#  'ruby' \
+#  'rails' \
+#  'git' \
+#  'syntax-highlighting' \
+#  'history-substring-search' \
+#  'prompt'
 
 #
 # Editor
@@ -49,7 +76,7 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 #
 
 # Ignore submodules when they are 'dirty', 'untracked', 'all', or 'none'.
-# zstyle ':prezto:module:git:status:ignore' submodules 'all'
+zstyle ':prezto:module:git:status:ignore' submodules 'all'
 
 #
 # GNU Utility
@@ -85,7 +112,8 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':prezto:module:prompt' theme 'sorin'
+# zstyle ':prezto:module:prompt' theme 'sorin'
+zstyle ':prezto:module:prompt' theme 'giddie'
 
 #
 # Ruby
@@ -110,6 +138,7 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 
 # Set the SSH identities to load into the agent.
 # zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'id_rsa2' 'id_github'
+zstyle ':prezto:module:ssh:load' identities 'id_rsa'
 
 #
 # Syntax Highlighting
