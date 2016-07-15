@@ -36,6 +36,8 @@ fi
 # Ensure path arrays do not contain duplicates.
 typeset -gU cdpath fpath mailpath path
 
+export GOPATH=/Users/jprice/programs/gopath
+
 # Set the the list of directories that cd searches.
 # cdpath=(
 #   $cdpath
@@ -65,10 +67,12 @@ tmanpath=( $tmanpath /usr/local/home/build/jprice/xemacs/man )
 tpath=( ~/bin ~ )
 tpath=( $tpath /Users/jprice/programs/git/homebrew/opt/coreutils/libexec/gnubin )
 tpath=( $tpath /Users/jprice/programs/git/homebrew/bin )
+tpath=( $tpath $GOPATH/bin )
 tpath=( $tpath /usr/local/opt/coreutils/libexec/gnubin )
 tpath=( $tpath /bin /sbin /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin )
 tpath=( $tpath /etc /usr/etc /opt/etc /usr/local/etc )
 tpath=( $tpath /usr/local/home/build/jprice/xemacs/bin )
+tpath=( $tpath /usr/local/go/bin )
 tpath=( $tpath /usr/ccs/bin /usr/openwin/bin /usr/dt/bin /usr/X11R6/bin )
 tpath=( $tpath /usr/opt/SUNWmd/sbin )
 tpath=( $tpath /usr/ucb )
