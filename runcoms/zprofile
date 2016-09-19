@@ -63,6 +63,7 @@ tmanpath=( $tmanpath /usr/opt/SUNWmd/man )
 tmanpath=( $tmanpath /usr/openv/man /usr/openv/man/share/man )
 tmanpath=( $tmanpath /usr/openv/netbackup/bin/goodies/man )
 tmanpath=( $tmanpath /usr/local/home/build/jprice/xemacs/man )
+tmanpath=( $tmanpath /Users/jprice/programs/git/homebrew/Cellar/lastpass-cli/1.0.0/share/man )
 
 tpath=( ~/bin ~ )
 tpath=( $tpath /Users/jprice/programs/git/homebrew/opt/coreutils/libexec/gnubin )
@@ -136,4 +137,8 @@ TMPPREFIX="${TMPDIR%/}/zsh"
 which kubectl >/dev/null 2>&1
 if [[ "$?" == "0" ]]; then
     source <(kubectl completion zsh)
+fi
+
+if [[ $(uname) == "Darwin" ]]; then
+    alias top='top -u'
 fi
