@@ -11,3 +11,12 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+#which kubectl >/dev/null 2>&1
+if which kubectl >/dev/null 2>&1 ; then
+    source <(kubectl completion zsh)
+fi
+
+if [[ -f /Users/jprice/programs/git/homebrew/bin/aws_zsh_completer.sh ]]; then
+    source /Users/jprice/programs/git/homebrew/bin/aws_zsh_completer.sh
+fi

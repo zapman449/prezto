@@ -33,7 +33,7 @@ function +vi-git_precmd {
 function prompt_giddie_precmd {
   # Replace '/home/<user>' with '~'.
   _prompt_giddie_pwd="${PWD/#$HOME/~}"
-  _prompt_giddie_kubectl=$(kubectl config current-context | sed 's/\.[a-z][a-z]*.kuber.pindrop.com//')
+  _prompt_giddie_kubectl=$(kubectl config current-context | sed 's/\.[a-z][a-z0-9]*.kuber.pindrop.com//')
   vcs_info
 }
 
@@ -70,7 +70,7 @@ function prompt_giddie_setup {
 
   # Define prompts.
   PROMPT='%(?..%F{red}%B-> [%?]%b%f
-)%F{magenta}%n%f@%F{yellow}%m%f|%F{green}${_prompt_giddie_pwd}%f${vcs_info_msg_0_} KC=${KUBECONFIG:-default} ${_prompt_giddie_kubectl}
+)%F{magenta}%n%f@%F{yellow}%m%f|%F{green}${_prompt_giddie_pwd}%f${vcs_info_msg_0_} CTEXT=${_prompt_giddie_kubectl:-unset}
 %F{blue}${_prompt_giddie_symbol}%f '
   RPROMPT='${editor_info[keymap]}'
   SPROMPT='zsh: correct %F{magenta}%R%f to %F{green}%r%f [nyae]? '

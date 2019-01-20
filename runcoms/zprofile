@@ -66,9 +66,11 @@ tmanpath=( $tmanpath /usr/local/home/build/jprice/xemacs/man )
 tmanpath=( $tmanpath /Users/jprice/programs/git/homebrew/Cellar/lastpass-cli/1.0.0/share/man )
 
 tpath=( ~/bin ~ )
+tpath=( $tpath /Users/jprice/programs/git/homebrew/opt/go/libexec/bin )
 tpath=( $tpath /Users/jprice/programs/git/homebrew/opt/coreutils/libexec/gnubin )
 tpath=( $tpath /Users/jprice/programs/git/homebrew/bin )
 tpath=( $tpath /Users/jprice/programs/git/iam-role-injector )
+tpath=( $tpath /Applications/Docker.app/Contents/Resources/bin )
 tpath=( $tpath $GOPATH/bin )
 tpath=( $tpath /usr/local/opt/coreutils/libexec/gnubin )
 tpath=( $tpath /bin /sbin /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin )
@@ -86,14 +88,14 @@ path=()
 for dir in $tpath ; do
    [[ -d $dir ]] && path=($path $dir)
 done
-unset $tpath
+unset tpath
 
 typeset -U manpath
 manpath=()
 for dir in $tmanpath ; do
    [[ -d $dir ]] && manpath=($manpath $dir)
 done
-unset $tmanpath
+unset tmanpath
 
 export path manpath PATH MANPATH
 
@@ -123,11 +125,6 @@ if [[ ! -d "$TMPDIR" ]]; then
 fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
-
-which kubectl >/dev/null 2>&1
-if [[ "$?" == "0" ]]; then
-    source <(kubectl completion zsh)
-fi
 
 if [[ $(uname) == "Darwin" ]]; then
     alias top='top -u'
